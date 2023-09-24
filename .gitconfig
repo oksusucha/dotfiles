@@ -1,0 +1,51 @@
+[alias]
+        l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+        ch = "!git checkout $(git bselect)"
+        bselect = "! # select branch with preview; \n\
+        f() { \
+            _height=$(stty size | awk '{print $1}');\
+            git branch | egrep -v '^\\*' | fzf --preview \"git l {1} | head -n $_height\"; \
+        }; f"
+        co = checkout
+        ld = "log \
+                --color --graph --decorate \
+                --date=format:'%Y-%m-%d %H:%M:%S' \
+                --abbrev-commit \
+                --pretty=format:'%C(red)%h%C(auto)%d %s %C(green)(%ad)%C(bold blue) %an'"
+        sync = "!# remote repo의 같은 branch와 동기화합니다.;\n\
+                remote=$( \
+                  { \
+                   git remote -v | egrep '^(origin|upstream)\\s'; \
+                   git remote -v | egrep -v '^(origin|upstream)\\s' | sort; \
+                  } \
+                  | awk '{print $1, $2}' | uniq \
+                  | column -t \
+                  | fzf | awk '{print $1}' \
+                ); \
+                if ! [ -z $remote ]; then \
+                  git fetch $remote && git reset --hard $remote/`git b0`; \
+                fi"
+        bb = "!# branch 도구 모음. 도움말: 'git bb help';\n\
+          f() { \n\
+              if [ $# = 0 ]; then \
+                  git branch-select | xargs git checkout; \
+              elif [ $1 = 'help' ]; then \
+                  echo 'git bb           : Select and checkout branch'; \
+                  echo 'git bb c, clean  : Clean all merged branches'; \
+                  echo 'git bb d, D      : Delete seleted branches(D: force)'; \
+                  echo 'git bb l, list   : List branches excluding the current branch'; \
+                  echo 'git bb m, merged : List merged branches excluding the current and master branches'; \
+              elif [ $1 = 'd' -o $1 = 'D' ]; then \
+                  git branch -$1 $(git bb list | fzf -m | awk '{print $2}'); \
+              elif [ $1 = 'clean' -o $1 = 'c' ]; then \
+                  git branch-clean; \
+              elif [ $1 = 'list' -o $1 = 'l' ]; then \
+                  git branch-list; \
+              elif [ $1 = 'merged' -o $1 = 'm' ]; then \
+                  git branch-merged; \
+              elif [ $1 = 'select' -o $1 = 's' ]; then \
+                  git branch-select; \
+              else \
+                  git bb help; \
+              fi; \
+          }; f"
