@@ -25,6 +25,8 @@
                 if ! [ -z $remote ]; then \
                   git fetch $remote && git reset --hard $remote/`git b0`; \
                 fi"
+        b0 = "!# 작업 branch를 출력합니다.;\n\
+                git branch | awk '/^\\*/{print $2}'"
         bb = "!# branch 도구 모음. 도움말: 'git bb help';\n\
           f() { \n\
               if [ $# = 0 ]; then \
