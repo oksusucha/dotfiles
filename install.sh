@@ -63,7 +63,7 @@ create_symlink() {
 }
 
 create_symlink ./.bash_profile ~/.bash_profile
-create_symlink ./.bashrc ~/.zshrc
+create_symlink ./.zshrc ~/.zshrc
 
 mkdir -p ~/.config
 create_symlink ./nvim ~/.config/nvim
