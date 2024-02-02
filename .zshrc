@@ -113,6 +113,9 @@ export HISTCONTROL=ignoreboth
 export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
 export HISTTIMEFORMAT="%F %T "
+export FZF_DEFAULT_COMMAND=’fd —t f’
+
+alias find='fd'
 
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
