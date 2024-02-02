@@ -73,7 +73,7 @@ ZSH_THEME="dst"
 plugins=(
   git,
   zsh-autosuggestions,
-  
+  autojump
 )
 
 source $ZSH/oh-my-zsh.sh
