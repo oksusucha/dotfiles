@@ -115,6 +115,8 @@ export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
 export HISTTIMEFORMAT="%F %T "
 export FZF_DEFAULT_COMMAND=’fd —t f’
+export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
 
 alias find='fd'
 
