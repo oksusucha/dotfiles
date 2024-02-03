@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 brew "autojump"
 brew "cask"
+brew "curl"
 brew "fd"
 brew "fzf"
 brew "jq"
@@ -12,3 +13,4 @@ cask "arc"
 cask "iterm2"
 cask "logi-options-plus"
 cask "raycast"
+mas "RunCat", id: 1429033973
