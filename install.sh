@@ -60,26 +60,7 @@ create_symlink() {
     else
         echo "$INDENT3 $dest 는 건너뜁니다."
     fi
-}
-
-echo -e "\nsdkman 이 설치 되어 있는지 검사 합니다."
-if ! command -v sdk &> /dev/null; then
-    echo "sdkman 이 설치되어 있지 않습니다."
-
-    read -p "$INDENT sdkman 을 설치하시겠습니까? (y/n): " install_sdkman
-
-    if [ "$install_sdkman" == "y" ]; then
-        /bin/bash -c "$(curl -s https://get.sdkman.io | zsh)"
-        /bin/bash -c "$(source \"$HOME/.sdkman/bin/sdkman-init.sh\")"
-
-        /bin/bash -c "$(sdk version)"
-
-        echo "sdkman 이 설치 되었습니다."
-    fi
-else
-    echo "$INDENT sdkman 이 이미 설치 되어 있습니다."
-fi
-        
+}  
 
 create_symlink ./.bash_profile ~/.bash_profile
 create_symlink ./.zshrc ~/.zshrc
