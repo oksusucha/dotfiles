@@ -16,5 +16,6 @@ cask "font-hack-nerd-font"
 cask "font-monaspace"
 cask "iterm2"
 cask "logi-options-plus"
+cask "orbstack"
 cask "raycast"
 mas "RunCat", id: 1429033973
