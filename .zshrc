@@ -100,6 +100,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias find="fd"
+alias ls="lsd"
+
 if [ -f ~/.bash_profile ]; then
   . ~/.bash_profile
 fi
@@ -110,13 +113,11 @@ export HISTFILESIZE=1000000000
 export HISTTIMEFORMAT="%F %T "
 
 # fzf
-#export FZF_DEFAULT_COMMAND="find . -path '*/\.*' -type d -prune -o -type f -print -o -type l -print 2> /dev/null | sed s/^..//"
+#export FZF_DEFAULT_COMMAND="find . -path '*/\.*' --type d -prune -o --type f -print -o --type l -print 2> /dev/null | sed s/^..//"
 #export FZF_DEFAULT_OPTS="--bind ctrl-space:print-query,pgup:preview-up,pgdn:preview-down --cycle"
 
 export LDFLAGS="-L/opt/homebrew/opt/curl/lib"
 export CPPFLAGS="-I/opt/homebrew/opt/curl/include"
-
-alias find='fd'
 
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
