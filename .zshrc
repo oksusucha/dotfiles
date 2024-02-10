@@ -111,6 +111,8 @@ export HISTSIZE=1000000
 export HISTFILESIZE=1000000000
 export HISTTIMEFORMAT="%F %T "
 
+export GPG_TTY=$(tty)
+
 # fzf
 export FZF_DEFAULT_COMMAND="find . -path '*/\.*' --type d -prune -o --type f -print -o --type l -print 2> /dev/null | sed s/^..//"
 export FZF_DEFAULT_OPTS="--bind ctrl-space:print-query,pgup:preview-up,pgdn:preview-down --cycle"
