@@ -17,6 +17,7 @@ cask "font-monaspace"
 cask "iterm2"
 cask "jetbrains-toolbox"
 cask "logi-options-plus"
+cask "miniconda"
 cask "orbstack"
 cask "raycast"
 mas "RunCat", id: 1429033973
