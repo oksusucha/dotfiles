@@ -20,6 +20,7 @@ cask "iterm2"
 cask "jetbrains-toolbox"
 cask "logi-options-plus"
 cask "miniconda"
+cask "notion"
 cask "orbstack"
 cask "raycast"
 mas "RunCat", id: 1429033973
