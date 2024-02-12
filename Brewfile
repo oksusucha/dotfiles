@@ -23,4 +23,5 @@ cask "miniconda"
 cask "notion"
 cask "orbstack"
 cask "raycast"
+mas "MindNode", id: 1289197285
 mas "RunCat", id: 1429033973
