@@ -14,6 +14,7 @@ brew "neovim"
 brew "pinentry-mac"
 brew "zsh"
 brew "zsh-syntax-highlighting"
+cask "android-sdk"
 cask "arc"
 cask "flutter"
 cask "font-hack-nerd-font"
@@ -28,3 +29,4 @@ cask "orbstack"
 cask "raycast"
 mas "MindNode", id: 1289197285
 mas "RunCat", id: 1429033973
+mas "Xcode", id: 497799835
